@@ -1,1 +1,24 @@
-Demo Page
+<?php $stores = $this->getStores(); ?>
+<div id="map">
+
+</div>
+
+<?php foreach ($stores as $key => $store) : ?>
+
+    <h3><?php echo $store->getName(); ?></h3>
+
+<?php endforeach; ?>
+
+<script>
+    function initMap() {
+        var uluru = {lat: -25.363, lng: 131.044};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: uluru
+        });
+        var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+        });
+    }
+</script>

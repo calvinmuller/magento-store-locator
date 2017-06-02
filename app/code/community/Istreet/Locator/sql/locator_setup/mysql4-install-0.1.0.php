@@ -1,8 +1,16 @@
 <?php
 $installer = $this;
 $installer->startSetup();
-$sql=<<<SQLTEXT
-create table stores(id int not null auto_increment, name varchar(100), primary key(tablename_id));
+$sql = <<<SQLTEXT
+create table stores(
+    id int not null auto_increment, 
+    name varchar(100),
+    address varchar(100),
+    trading_hours varchar(100),
+    latitute decimal(10,2),
+    longitude decimal(10,2),
+    primary key(id)
+);
 		
 SQLTEXT;
 

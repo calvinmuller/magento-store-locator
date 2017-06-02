@@ -1,2 +1,3 @@
-app/code/community/iStreet/Locator* app/code/community/iStreet/Locator
+app/code/community/Istreet/Locator* app/code/community/Istreet/Locator
 app/etc/modules/*         app/etc/modules/
+app/design/*		app/design/*

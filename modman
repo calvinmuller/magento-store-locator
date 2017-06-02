@@ -1,4 +1,4 @@
-app/code/community/Istreet/Locator* app/code/community/Istreet/Locator
+app/code/community/Istreet/* app/code/community/Istreet
 
 # design
 app/design/frontend/base/default/layout/locator.xml app/design/frontend/base/default/layout/locator.xml

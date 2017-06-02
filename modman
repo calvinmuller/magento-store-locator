@@ -1,3 +1,13 @@
 app/code/community/Istreet/Locator* app/code/community/Istreet/Locator
-app/etc/modules/*         app/etc/modules/
-app/design/*		app/design/*
+
+# design
+app/design/frontend/base/default/layout/locator.xml app/design/frontend/base/default/layout/locator.xml
+app/design/frontend/base/default/template/locator app/design/frontend/base/default/template/locator
+
+# etc
+app/etc/modules/Istreet_Locator.xml app/etc/modules/Istreet_Locator.xml
+
+# skin
+skin/frontend/base/default/css/locator skin/frontend/base/default/css/locator
+skin/frontend/base/default/images/locator skin/frontend/base/default/images/locator
+skin/frontend/base/default/js/locator skin/frontend/base/default/js/locator

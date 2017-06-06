@@ -2,3 +2,23 @@
     height: 400px;
     widht: 100%;
 }
+
+.stores {
+    margin-top: 30px;
+}
+
+address strong {
+    font-size: 16px;
+}
+
+.stores p {
+    margin-top: 15px;
+}
+
+.stores .store {
+    cursor: pointer;
+}
+
+.stores p.strong {
+    font-weight: 600;
+}

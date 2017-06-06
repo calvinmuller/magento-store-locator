@@ -7,8 +7,8 @@ create table stores(
     name varchar(100),
     address varchar(100),
     trading_hours varchar(100),
-    latitute decimal(10,2),
-    longitude decimal(10,2),
+    latitute decimal(10,5),
+    longitude decimal(10,5),
     primary key(id)
 );
 		

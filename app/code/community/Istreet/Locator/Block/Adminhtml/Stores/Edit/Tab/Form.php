@@ -15,7 +15,7 @@ class Istreet_Locator_Block_Adminhtml_Stores_Edit_Tab_Form extends Mage_Adminhtm
             "name" => "name",
         ));
 
-        $fieldset->addField("address", "text", array(
+        $fieldset->addField("address", "textarea", array(
             "label" => Mage::helper("locator")->__("Address"),
             "name" => "address",
         ));

@@ -1,24 +1,57 @@
 <?php $stores = $this->getStores(); ?>
-<div id="map">
+<div id="map"></div>
 
+<div class="stores">
+    <?php $i=0; foreach ($stores as $key => $store) : ?>
+
+        <div class="col-sm-4 store" onclick="goToMarker(<?php echo $i++ ?>)">
+            <address>
+                <strong><?php echo $store->getName(); ?></strong>
+                <p><?php echo nl2br($store->getAddress()); ?></p>
+                <p class="strong"><?php echo nl2br($store->getTradingHours()); ?></p>
+            </address>
+        </div>
+
+    <?php endforeach; ?>
 </div>
 
-<?php foreach ($stores as $key => $store) : ?>
-
-    <h3><?php echo $store->getName(); ?></h3>
-
-<?php endforeach; ?>
-
 <script>
+
+    var stores = <?php echo json_encode($stores->getData()); ?>;
+
+    var marker = [], i, map;
+
+    function goToMarker(id) {
+        console.log(id);
+        var position = {lat: parseFloat(stores[id].latitute), lng: parseFloat(stores[id].longitude)};
+        console.log(position);
+        map.setCenter(position);
+    }
+
     function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: uluru
+        var firstStore = {lat: parseFloat(stores[0].latitute), lng: parseFloat(stores[0].longitude)};
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 13,
+            center: firstStore
         });
-        var marker = new google.maps.Marker({
-            position: uluru,
-            map: map
-        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        for (i = 0; i < stores.length; i++) {
+            marker.push(new google.maps.Marker({
+                position: new google.maps.LatLng(parseFloat(stores[i].latitute), parseFloat(stores[i].longitude)),
+                map: map
+            }));
+
+            google.maps.event.addListener(marker[i], 'click', (function (marker, i) {
+                return function () {
+                    infowindow.setContent(stores[i].name);
+                    infowindow.open(map, marker[i]);
+                }
+            })(marker, i));
+        }
     }
 </script>
+<script async defer
+        src="//maps.googleapis.com/maps/api/js?key=AIzaSyDvtli0-DYhYt3OD-A3Sft8oAQ17HbwdIE&callback=initMap"></script>

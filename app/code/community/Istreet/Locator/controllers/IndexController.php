@@ -6,7 +6,7 @@ class Istreet_Locator_IndexController extends Mage_Core_Controller_Front_Action
     {
 
         $this->loadLayout();
-        $this->getLayout()->getBlock("head")->setTitle($this->__("Titlename"));
+        $this->getLayout()->getBlock("head")->setTitle($this->__("Stockists"));
         $breadcrumbs = $this->getLayout()->getBlock("breadcrumbs");
         $breadcrumbs->addCrumb("home", array(
             "label" => $this->__("Home"),

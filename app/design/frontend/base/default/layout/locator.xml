@@ -13,12 +13,12 @@
                 <type>skin_css</type>
                 <name>css/locator/stores.css</name>
             </action>
-            <block type="locator/index" name="locator_js" template="locator/js/google.phtml"/>
         </reference>
 
         <reference name="content">
             <block type="locator/index" name="locator_index" template="locator/index.phtml"/>
         </reference>
+
     </locator_index_index>
 </layout>   
 	
